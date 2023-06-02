@@ -62,7 +62,6 @@ public class Analyzer {
         return sentences;
     }
 
-
     public static Map<String, Double> calculateWordScores(Set<Sentence> sentences) {
         // If there are no sentences in the set, return an empty map
         if (sentences == null || sentences.isEmpty()) {
@@ -120,8 +119,19 @@ public class Analyzer {
                 scoreSum += score;
                 numWords++;
             }
+            else
+            {
+                return 0.0;
+            }
         }
-        return scoreSum / numWords;
+        if(numWords > 0)
+        {
+            return scoreSum / numWords;
+        }
+        else
+        {
+            return 0.0;
+        }
     }
     public static void main(String[] args) {
         // If the name of the input file is not provided as a runtime argument, the program should display

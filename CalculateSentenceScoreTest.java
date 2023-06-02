@@ -75,4 +75,14 @@ public class CalculateSentenceScoreTest {
         wordScores.put("the", 0.0);
         Assert.assertEquals(0.6, Analyzer.calculateSentenceScore(wordScores, "BUT CATS ARE THE BEST"), 0.0);
     }
+
+    // - Invalid input sentence returns score of 0
+    @Test
+    public void invalidSentenceReturns0() {
+        Map<String, Double> wordScores = new HashMap<>();
+        wordScores.put("cats", 2.0);
+        wordScores.put("are", 1.0);
+        wordScores.put("the", 0.0);
+        Assert.assertEquals(0.0, Analyzer.calculateSentenceScore(wordScores, "???"), 0.0);
+    }
 }
