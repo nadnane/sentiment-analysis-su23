@@ -119,10 +119,6 @@ public class Analyzer {
                 scoreSum += score;
                 numWords++;
             }
-            else
-            {
-                return 0.0;
-            }
         }
         if(numWords > 0)
         {
